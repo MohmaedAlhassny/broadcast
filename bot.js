@@ -49,8 +49,8 @@ client.users.get('449313863494664214').send(eeee2)
 
 
 client.on('message', msg => {
-    if(msg.content.startsWith('!bcall')) {
-    if(msg.author.id !== '449313863494664214') return;
+	if(message.content === prefix + 'bcall') {
+	if(msg.author.id !== '449313863494664214') return;
     let args = msg.content.split(' ').slice(1).join(' ');
 if(msg.channel.type === 'dm') return;
 msg.channel.send('Done ... Message has been sent to ' + client.users.size + 'User !')
