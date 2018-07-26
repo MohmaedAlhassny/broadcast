@@ -73,8 +73,8 @@ if(!message.channel.guild) return message.channel.send('**هذا الأمر فق
 if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
 let args = message.content.split(" ").join(" ").slice(2 + prefix.length);
 let BcList = new Discord.RichEmbed()
-.setThumbnail(message.author.avatarURL)
-.setAuthor(message.author.tag, message.author.avatarURL)
+.setColor('RANDOM')
+.setTitle(client.user.avatarURL, client.user.username)
 .setDescription(`**▶ 📝 لأرسال رسالة امبد قم بالضغط على \n ▶ ✏ لأرسال رسالة عادية قم بالضغط على \n ★ ${user} \n ★ ${server} \n ★ ${seender}**`)
 if (!args) return message.reply('**يجب عليك كتابة كلمة او جملة لإرسال البرودكاست**');message.channel.send(BcList).then(msg => {
 msg.react('📝')
@@ -90,20 +90,21 @@ let NormalBc = msg.createReactionCollector(NormalBcFilter, { time: 60000 });
  
 EmbedBc.on("collect", r => {
  
-message.channel.send(success).then(m => m.delete(5000));
+message.channel.send(success);
 message.guild.members.forEach(m => {
 let EmbedRep = args.replace('[السيرفر]' ,message.guild.name).replace('[العضو]', m).replace('[المرسل]', `${message.author}`)
 var bc = new
 Discord.RichEmbed()
 .setColor('RANDOM')
 .setDescription(EmbedRep)
-.setThumbnail(message.author.avatarURL)
+.setAuthor(client.user.avatarURL, client.user.username)
+.setFooter(`${prefix}invite | لدعوة برودكاست بوت`)
 m.send({ embed: bc })
 msg.delete();
 })
 })
 NormalBc.on("collect", r => {
-  message.channel.send(success).then(m => m.delete(5000));
+  message.channel.send(success);
 message.guild.members.forEach(m => {
 let NormalRep = args.replace('[السيرفر]' ,message.guild.name).replace('[العضو]', m).replace('[المرسل]', `${message.author}`)
 m.send(NormalRep);
