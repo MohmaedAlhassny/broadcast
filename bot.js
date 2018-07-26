@@ -97,7 +97,6 @@ var bc = new
 Discord.RichEmbed()
 .setColor('RANDOM')
 .setDescription(EmbedRep)
-.setAuthor(client.user.avatarURL, client.user.username)
 .setFooter(`${prefix}invite | لدعوة برودكاست بوت`)
 m.send({ embed: bc })
 msg.delete();
