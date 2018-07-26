@@ -49,7 +49,7 @@ client.users.get('449313863494664214').send(eeee2)
 
 
 client.on('message', msg => {
-	if(message.content === prefix + 'bcall') {
+	if(msg.content === prefix + 'bcall') {
 	if(msg.author.id !== '449313863494664214') return;
     let args = msg.content.split(' ').slice(1).join(' ');
 if(msg.channel.type === 'dm') return;
@@ -68,7 +68,7 @@ client.on('message', message => {
 	.setDescription(`تم أرسال رسالتك بنجاح.`)
 	.setColor('GREEN')
 	.setAuthor(message.author.tag, message.author.avatarURL)
-if(message.content === prefix + 'bc') {
+if(msg.content === prefix + 'bc') {
 if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
 if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
 let args = message.content.split(" ").join(" ").slice(2 + prefix.length);
