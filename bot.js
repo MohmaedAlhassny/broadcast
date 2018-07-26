@@ -152,6 +152,10 @@ var help = `**★ BroadCast | برود كاست بوت
 
 
 ★ شكراً لكم.
+
+★ .PlayTeam من أعداد وتطوير فريق
+
+★ https://discord.gg/S83UyHw :الدعم الفني
 **`;
 
 
