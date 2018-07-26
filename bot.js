@@ -135,7 +135,7 @@ var help = `**★ BroadCast | برود كاست بوت
 
 ★ أو الضغط على الرابط التالي ${prefix}invite يمكنك دعوة البوت عن طريق كتابة 
 
-★ https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=8
+★ https://discordapp.com/oauth2/authorize?client_id=471886246684262410&scope=bot&permissions=8
 
 
 ★ شكراً لكم.
