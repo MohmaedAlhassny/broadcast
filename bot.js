@@ -1,14 +1,56 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const prefix = '$';
+const prefix = '!';
 const seender = 'لعمل منشن لمرسل الرساله قم بكتابة [المرسل] في الرسالة.';
 const server = 'لكتابة اسم السيرفر قم بكتابة [السيرفر] في الرسالة.';
 const user = 'لعمل منشن للشخص قم بكتابة [العضو] في الرسالة.';
+client.on('ready', () => {
+	console.log(`logged as$ {client.user.tag}`);
+	console.log(`Guilds: ${client.guilds.size}`);
+	console.log(`Users: ${client.users.size}`);
+});
+
+client.on('message', message => {
+  if(message.content === prefix + 'stats') {
+    message.channel.send('**I have `' + `${client.guilds.size}` + '` Server :fire:, `' + `${client.channels.size}` + '` Channels and `' + `${client.users.size}` + '` users.**')
+    message.channel.send('**- If you want me to join in your server? just do `' + `${prefix}invite` + '` **');
+  }
+});
+
+client.on('guildCreate', (guild) => {
+
+var eeee = `**★-----------------------------------------------------★
+                         ❥ New Server !
+
+                         ● Name: ${guild.name}
+                         ● Owner: <@${guild.ownerID}>
+                         ● Members: ${guild.memberCount}
+★-----------------------------------------------------★**`;
+client.user.setGame(`${prefix}help + ${prefix}invite | ${client.guilds.size} server.`, "https://twitch.tv/L3bBot")
+client.users.get('449313863494664214').send(eeee)
+})
+
+
+client.on('guildDelete', (guild) => {
+
+var eeee2 = `**★-----------------------------------------------------★
+                         ❥ We lost a server :frowning2:
+
+                         ● Name: ${guild.name}
+                         ● Owner: <@${guild.ownerID}>
+                         ● Members: ${guild.memberCount}
+★-----------------------------------------------------★**`;
+client.user.setGame(`${prefix}help + ${prefix}invite | ${client.guilds.size} server.`, "https://twitch.tv/L3bBot")
+client.users.get('449313863494664214').send(eeee2)
+})
 
 var success = new Discord.RichEmbed()
 	.setDescription(`تم أرسال رسالتك بنجاح.`)
 	.setColor('GREEN')
 	.setAuthor(message.author.tag, message.author.avatarURL)
+
+
+
 
 
 
