@@ -8,6 +8,8 @@ client.on('ready', () => {
 	console.log(`logged as$ {client.user.tag}`);
 	console.log(`Guilds: ${client.guilds.size}`);
 	console.log(`Users: ${client.users.size}`);
+	client.user.setGame(`${prefix}help + ${prefix}invite | ${client.guilds.size} server.`, "https://twitch.tv/L3bBot")
+
 });
 
 client.on('message', message => {
@@ -159,7 +161,7 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-	if(message.author.bot) return message.channel.send(`${message.author}, i can't send you bcuz ur bot.`);
+	if(message.author.bot) return;
 	if(message.content === prefix + 'help') {
 		
 		return message.channel.sendMessage(help);
