@@ -152,7 +152,7 @@ var help = `**★ BroadCast | برود كاست بوت
 
 ★ .PlayTeam من أعداد وتطوير فريق
 
-★ https://discord.gg/S83UyHw :الدعم الفني
+★ https://discord.gg/39FksCH :الدعم الفني
 **`;
 
 
@@ -166,6 +166,11 @@ client.on('message', message => {
 				لدعوة البوت : 
 				للأرسال 'ADMINSTRATION' ملاحظة: يتطلب برمشن 
 	 :link: Link, : https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=8
+
+
+	★ https://discord.gg/39FksCH :الدعم الفني
+
+
 
 	 **`);
 
